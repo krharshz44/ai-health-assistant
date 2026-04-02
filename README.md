@@ -1,18 +1,95 @@
-<<<<<<< HEAD
-# HostelMed — AI Health Assistant
-
-A hackathon-ready AI health chatbot for hostel students. Built with React + Vite, Node.js + Express, and OpenAI.
+Here’s a **clean, professional, hackathon-winning README** that clearly explains your idea, improves structure, and boosts impact 👇
 
 ---
 
-## Folder Structure
+# 🚀 HostelMed — AI Health Assistant for Students
+
+An AI-powered health assistant designed specifically for **hostel students** to quickly assess symptoms, get basic remedies, and understand urgency — all in seconds.
+
+> 🧠 Built using **React + Vite**, **Node.js + Express**, and **OpenAI API**
+
+---
+
+## 💡 Problem Statement
+
+Hostel students often face health issues like:
+
+* Fever, cold, stomach infections
+* Food poisoning from mess food
+* Delayed medical attention due to confusion or negligence
+
+⚠️ **Challenges:**
+
+* No immediate doctor access
+* Lack of medical awareness
+* Ignoring early symptoms
+
+---
+
+## ✅ Solution — HostelMed
+
+HostelMed acts as a **24/7 AI health companion** that:
+
+* 🩺 Analyzes symptoms instantly
+* 🚦 Classifies urgency (Low / Medium / High)
+* 💊 Suggests basic remedies
+* 🏥 Recommends when to seek medical help
+
+---
+
+## 🌟 Key Features
+
+### 🤖 AI Symptom Analyzer
+
+* Input symptoms in natural language
+* AI returns structured medical insights
+
+### 🚨 Urgency Detection
+
+* 🟢 Low — Home care enough
+* 🟡 Medium — Monitor condition
+* 🔴 High — Immediate medical attention
+
+### 💡 Smart Recommendations
+
+* Basic remedies
+* Precautions
+* Next steps
+
+### 🎯 Hostel-Focused Intelligence
+
+* Mess food-related issues
+* Seasonal illnesses
+* Student lifestyle patterns
+
+---
+
+## 🏗️ Tech Stack
+
+### Frontend
+
+* React (Vite)
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+
+### AI Integration
+
+* OpenAI API
+
+---
+
+## 📂 Project Structure
 
 ```
 ai-health-assistant/
 ├── backend/
-│   ├── server.js          ← Express server + OpenAI integration
+│   ├── server.js
 │   ├── package.json
-│   └── .env.example       ← Copy this to .env and add your API key
+│   └── .env.example
 │
 └── frontend/
     ├── index.html
@@ -25,129 +102,122 @@ ai-health-assistant/
         ├── App.jsx
         ├── index.css
         ├── components/
-        │   ├── ChatBox.jsx        ← Main chat UI
-        │   └── MessageBubble.jsx  ← Message rendering
+        │   ├── ChatBox.jsx
+        │   └── MessageBubble.jsx
         └── hooks/
-            └── useChat.js         ← State + API logic
+            └── useChat.js
 ```
 
 ---
 
-## Step 1 — Get an OpenAI API Key
+## ⚙️ Setup Instructions
 
-1. Go to https://platform.openai.com/api-keys
-2. Click "Create new secret key"
-3. Copy the key (starts with `sk-...`)
+### 1️⃣ Clone the Repository
+
+```bash
+git clone <your-repo-url>
+cd ai-health-assistant
+```
 
 ---
 
-## Step 2 — Setup the Backend
-
-Open a terminal and run these commands:
+### 2️⃣ Backend Setup
 
 ```bash
-# Navigate to backend folder
-cd ai-health-assistant/backend
-
-# Install dependencies
+cd backend
 npm install
-
-# Create your .env file
 cp .env.example .env
 ```
 
-Now open `backend/.env` in any text editor and replace the placeholder:
+Edit `.env`:
 
 ```
-OPENAI_API_KEY=sk-your-actual-key-here
+OPENAI_API_KEY=your-api-key
 PORT=5000
 ```
 
----
-
-## Step 3 — Run the Backend
+Run backend:
 
 ```bash
-# Still inside the backend folder
 npm run dev
 ```
 
-You should see:
-```
-✅ Server running at http://localhost:5000
-📋 POST /api/symptom — ready
-```
-
-Leave this terminal open.
-
 ---
 
-## Step 4 — Setup the Frontend
-
-Open a **new terminal** and run:
+### 3️⃣ Frontend Setup
 
 ```bash
-# Navigate to frontend folder
-cd ai-health-assistant/frontend
-
-# Install dependencies
+cd ../frontend
 npm install
-```
-
----
-
-## Step 5 — Run the Frontend
-
-```bash
-# Still inside the frontend folder
 npm run dev
 ```
 
-You should see:
+Open:
+
 ```
-  ➜  Local:   http://localhost:3000/
+http://localhost:3000
 ```
 
-Open http://localhost:3000 in your browser. The app should be running!
+---
+
+## 🔄 How It Works
+
+1. User enters symptoms
+2. Frontend sends request to backend
+3. Backend processes via OpenAI
+4. AI returns structured response:
+
+   * Urgency level
+   * Possible issue
+   * Remedies
+5. UI displays formatted health insights
 
 ---
 
-## How It Works
+## 🧪 Demo Inputs (For Judges)
 
-1. User types symptoms in the chat box
-2. Frontend sends `POST /api/symptom` to the backend
-3. Backend sends the message to OpenAI with a hostel-specific prompt
-4. OpenAI returns structured JSON with urgency level, remedies, etc.
-5. Frontend displays the response as a formatted health card
+Try these during your hackathon demo:
 
----
-
-## Common Errors & Fixes
-
-**Error: "Invalid OpenAI API key"**
-→ Open `backend/.env` and make sure your key is correct (no spaces, no quotes around it)
-
-**Error: "Connection failed. Is the backend running on port 5000?"**
-→ Make sure you started the backend first with `npm run dev` in the backend folder
-
-**Error: "Cannot find module 'openai'"**
-→ Run `npm install` again inside the backend folder
-
-**Frontend shows blank screen**
-→ Check the browser console (F12) for errors. Make sure you ran `npm install` in the frontend folder.
-
-**Port 5000 already in use**
-→ Change PORT in `backend/.env` to 5001 and update `frontend/vite.config.js` proxy target to `http://localhost:5001`
+* "Fever and headache since morning, 101°F"
+* "Loose motions after eating hostel food"
+* "Chest pain while breathing deeply"
+* "Cold and runny nose"
 
 ---
 
-## For the Hackathon Demo
+## ⚠️ Error Handling
 
-Test these inputs to show judges:
-- "I have fever and headache since morning, 101 degrees"
-- "Stomach pain and loose motions after eating mess food"
-- "Chest pain while breathing deeply" (shows HIGH urgency)
-- "Mild cold and runny nose" (shows LOW urgency)
-=======
-# ai-health-assistant
->>>>>>> f407207e78e81817d4377bf288844238a1622956
+| Issue                  | Solution                  |
+| ---------------------- | ------------------------- |
+| Invalid API key        | Check `.env` file         |
+| Backend not connecting | Ensure backend is running |
+| Blank screen           | Check browser console     |
+| Port conflict          | Change port in `.env`     |
+
+---
+
+## 🚀 Future Enhancements
+
+* 📱 Mobile app version
+* 🏥 Nearby hospital locator
+* 📊 Health history tracking
+* 🔔 Emergency alert system
+* 🤖 Voice-based assistant
+
+---
+
+## 🏆 Why This Project Wins Hackathons
+
+* ✅ Solves a **real student problem**
+* ✅ **AI-powered + impactful**
+* ✅ Clean UX with meaningful output
+* ✅ Scalable to colleges & institutions
+* ✅ B2B + B2C potential
+
+---
+
+## 📌 Tagline
+
+> “Your hostel’s personal AI doctor — anytime, anywhere.”
+
+---
